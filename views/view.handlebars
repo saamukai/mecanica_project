@@ -1,0 +1,34 @@
+  <header>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">Mecanica Classic Car</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Ver Servicos</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+<div id="servico-view-container" class="container">
+  <div class="row text-center">
+    <a class="back-link main-color" href="/">Voltar</a>
+    <div id="img-container" class="col-md-12">
+      <img src="/img/manager.svg" alt="cliente">
+    </div>
+    <div class="col-md-12">
+      <h1 class="main-color">{{servico.dataValues.carro}}</h1>
+      <p class="bold">Detalhes do servico:</p>
+      <p class="servico-desc">{{servico.dataValues.descricao}}</p>
+      <p>
+        Cliente: <span class="bold main-color">{{servico.dataValues.cliente}}</span><br>
+        Contato: <a class="main-color">{{servico.dataValues.contato}}</a>
+      </p>
+      <p><span class="bold">O valor do servico é de:</span> R${{servico.dataValues.valor}}</p>
+    </div>
+  </div>
+</div>

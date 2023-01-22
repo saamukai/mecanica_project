@@ -1,0 +1,55 @@
+  <header>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">Mecanica Classic Car</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Ver Servicos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-primary" href="servicos/add">Novo Servico</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+<div id="top-container" class="container-fluid">
+  <h1 id="main-title" class="text-center">Pesquise por carros para encontrar o servico</h1>
+  <form id="search-form" class="form-inline" action="/" method="GET">
+    <div class="form-group col-md-10">
+      <input type="text" class="form-control" id="servico" name="servico" placeholder="Digite o nome do carro">
+    </div>
+    <div class="col-md-2">
+      <button type="submit" class="btn btn-primary">Procurar</button>
+    </div>
+  </form>
+</div>
+<main>
+  <div id="servicos-container" class="container">
+    <div class="row">
+      <div class="col-md-12">
+        {{#if search}}
+          <h2 id="servico-list-carro">Buscando servicos que contem o carro: {{search}}</h2>
+        {{else}}
+          <h2 id="servico-list-carro">Veja os servicos</h2>
+        {{/if}}
+        <ul id="servico-list" class="list-group">
+          {{#each servicos}}
+            <li class="list-group-item {{#if dataValues.novo_servico }}novo-servico{{/if}}">
+              <img src="/img/manager.svg" alt="cliente">
+              <h2>{{dataValues.carro}}</h2>
+              <p>{{dataValues.cliente}}</p>
+              <p>R${{dataValues.valor}}</p>
+              <span class="novo-servico-label">Nova</span>
+              <a class="btn btn-primary" href="/servicos/view/{{dataValues.id}}">Ver servico</a>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
