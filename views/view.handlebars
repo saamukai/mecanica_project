@@ -17,6 +17,9 @@
 <div id="servico-view-container" class="container">
   <div class="row text-center">
     <a class="back-link main-color" href="/">Voltar</a>
+    <form action="/servicos{{dataValues.id}}" method="DELETE">
+      <a class="btn btn-primary" href="/servicos/{{dataValues.id}}">Apagar servico</a>
+    </form>
     <div id="img-container" class="col-md-12">
       <img src="/img/manager.svg" alt="cliente">
     </div>

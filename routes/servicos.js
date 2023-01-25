@@ -38,4 +38,18 @@ router.post('/add', (req, res) => {
 
 });
 
+router.delete('/servicos/:id', (req, res) => {
+  let id = req.params.id;
+
+  Servico.destroy({
+    where: { id: id }
+  })
+  .then(() => {
+    res.redirect('/');
+  })
+  .catch(err => {
+    console.log(err);
+  });
+});
+
 module.exports = router
